@@ -1,0 +1,170 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Pedidos</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">Pedidos</a></li>
+                            <li class="breadcrumb-item"><a href="#">Base Report B2B</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            <!-- [ Hover-table ] start -->
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Pedidos</h5>
+                        <span class="d-block m-t-5">Listando <code>PROJETO ESPECIAL</code> - default</span>
+                    </div>
+
+                    <div class="card-header">
+                        <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Filtro
+                        </a>
+                    </div>
+
+                    <div class="card-body table-border-style panel-collapse collapse" id="collapseExample">
+                        <form method="get">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Pedido</label>
+                                        <div>
+                                            <input name="pedido" aria-label="Search" type="search" class="form-control"
+                                                placeholder="Número do Pedido ou ATP">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Segmento</label>
+                                        <div class="col-md-6">
+                                            <select class="form-control" name="segmento">
+                                                <option>Todos</option>
+                                                {% for row in segmento_list %}
+                                                <option>{{ row.segmento }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Pendência</label>
+                                        <div class="col">
+                                            <select class="form-control" name="pendencia">
+                                                <option>Todos</option>
+                                                {% for row in pendencia_list %}
+                                                <option>{{ row }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Cliente</label>
+                                        <div>
+                                            <input name="cliente" aria-label="Search" type="search" class="form-control"
+                                                placeholder="Nome do Cliente">
+                                        </div>
+                                    </div>
+                                </div>
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-search"></span>Filtrar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card-body table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Pedido #
+                                        </th>
+                                        <th>
+                                            ATP
+                                        </th>
+                                        <th>
+                                            Carteira
+                                        </th>
+                                        <th>
+                                            Segmento
+                                        </th>
+                                        <th>
+                                            Delta
+                                        </th>
+                                        <th>
+                                            Status Macro
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    {% for object in object_list %}
+
+                                    <tr>
+                                        <td>
+                                            <a href="{{object.get_absolute_url}}">{{object}}</a>
+                                        </td>
+                                        <td>
+                                            {{ object.num_atp }}
+                                        </td>
+                                        <td>
+                                            {{ object.carteira }}
+                                        </td>
+                                        <td>
+                                            {{ object.segmento }}
+                                        </td>
+                                        <td>
+                                            R$ {{ object.delta_rec_total }}
+                                        </td>
+                                        <td>
+                                            <label class="btn-light">{{ object.pendencia_macro }}</label>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ Hover-table ] end -->
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</section>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

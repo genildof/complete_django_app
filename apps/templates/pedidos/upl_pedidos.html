@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+  <div class="pcoded-content">
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="page-header-title">
+              <h5 class="m-b-10">Upload Menu</h5>
+            </div>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="#">Pedidos</a></li>
+              <li class="breadcrumb-item"><a href="#">Report B2B Upload</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [ breadcrumb ] end -->
+    <!-- [ Main Content ] start -->
+    <div class="row">
+
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Upload base de dados</h4>
+            <p class="card-description">
+              Importando formato <code>REPORT B2B</code> - atenção ao formato.
+            </p>
+            <form class="form-inline" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label class="sr-only" for="inlineFormInputName2">Selecionar</label>
+              <div class="input-group mb-2 mr-sm-2">
+                <input type="file" name="myfile" class="form-control" id="inlineFormInputName2"
+                  placeholder="selecione o arquivo a improtar">
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="glyphicon-search"></span>Upload
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- [ Main Content ] end -->
+  </div>
+</section>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

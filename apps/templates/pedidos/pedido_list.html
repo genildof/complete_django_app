@@ -1,0 +1,26 @@
+{% extends "pedidos/pedido_base.html" %}
+
+{% block title %} UI Tables {% endblock %}
+
+{% block pedido_content %}
+
+<div class="m-2">
+    <h4>Pedidos - Lista</h4>
+</div>
+
+{% for object in object_list %}
+<div class="m-2">
+    <a href="{{object.get_absolute_url}}">{{object}}</a>
+    <small class="ml-5">
+        <a href="{% url 'apps_Pedido_delete' object.pk %}">
+            (Delete)
+        </a>
+    </small>
+</div>
+{% endfor %}
+<div>
+    <a class="btn btn-primary" href="{% url 'apps_Pedido_create' %}">
+        Novo Pedido
+    </a>
+</div>
+{% endblock %}

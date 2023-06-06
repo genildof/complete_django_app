@@ -1,0 +1,166 @@
+{% extends "pedidos/pedido_base.html" %}
+
+{% block pedido_content %}
+
+<p>
+    <a class="btn btn-light" href="{% url 'apps_Pedido_list' %}">
+        Pedido Listing
+    </a>
+</p>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.errors}}
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="nova_quebra">nova_quebra: </label>
+        <input class="form-control col-sm-10"'
+         id="nova_quebra" type="text"
+         name="nova_quebra" value="{{ object.nova_quebra }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="rede_contratada">rede_contratada: </label>
+      <input class="form-control col-sm-10"' id="rede_contratada" type="text" name="rede_contratada"
+            value="{{ object.rede_contratada }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="data_entrada">data_entrada: </label>
+        <input class="form-control col-sm-10"'
+         id="data_entrada" type="datetime-local"
+         name="data_entrada" value="{{ object.data_entrada }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="servico">servico: </label>
+      <input class="form-control col-sm-10"' id="servico" type="text" name="servico" value="{{ object.servico }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="updated_at">updated_at: </label>
+        <input class="form-control col-sm-10"'
+         id="updated_at" type="datetime-local"
+         name="updated_at" value="{{ object.updated_at }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="rede_data_contratada">rede_data_contratada: </label>
+      <input class="form-control col-sm-10"' id="rede_data_contratada" type="datetime-local"
+            name="rede_data_contratada" value="{{ object.rede_data_contratada }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="cliente">cliente: </label>
+        <input class="form-control col-sm-10"'
+         id="cliente" type="text"
+         name="cliente" value="{{ object.cliente }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="num_wcd">num_wcd: </label>
+      <input class="form-control col-sm-10"' id="num_wcd" type="text" name="num_wcd" value="{{ object.num_wcd }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="data_planejada">data_planejada: </label>
+        <input class="form-control col-sm-10"'
+         id="data_planejada" type="datetime-local"
+         name="data_planejada" value="{{ object.data_planejada }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="cadeia_pendencias_descricao">cadeia_pendencias_descricao: </label>
+      <input class="form-control col-sm-10"' id="cadeia_pendencias_descricao" type="text"
+            name="cadeia_pendencias_descricao" value="{{ object.cadeia_pendencias_descricao }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="segmento">segmento: </label>
+        <input class="form-control col-sm-10"'
+         id="segmento" type="text"
+         name="segmento" value="{{ object.segmento }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="sla">sla: </label>
+      <input class="form-control col-sm-10"' id="sla" type="text" name="sla" value="{{ object.sla }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="num_atp">num_atp: </label>
+        <input class="form-control col-sm-10"'
+         id="num_atp" type="text"
+         name="num_atp" value="{{ object.num_atp }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="data_tecnica">data_tecnica: </label>
+      <input class="form-control col-sm-10"' id="data_tecnica" type="datetime-local" name="data_tecnica"
+            value="{{ object.data_tecnica }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="rede_status_sco">rede_status_sco: </label>
+        <input class="form-control col-sm-10"'
+         id="rede_status_sco" type="text"
+         name="rede_status_sco" value="{{ object.rede_status_sco }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="velocidade">velocidade: </label>
+      <input class="form-control col-sm-10"' id="velocidade" type="text" name="velocidade"
+            value="{{ object.velocidade }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="status_update">status_update: </label>
+        <input class="form-control col-sm-10"'
+         id="status_update" type="datetime-local"
+         name="status_update" value="{{ object.status_update }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created_at">created_at: </label>
+      <input class="form-control col-sm-10"' id="created_at" type="datetime-local" name="created_at"
+            value="{{ object.created_at }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="rede_id_sco">rede_id_sco: </label>
+        <input class="form-control col-sm-10"'
+         id="rede_id_sco" type="text"
+         name="rede_id_sco" value="{{ object.rede_id_sco }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="cidade">cidade: </label>
+      <input class="form-control col-sm-10"' id="cidade" type="text" name="cidade" value="{{ object.cidade }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="delta_rec_total">delta_rec_total: </label>
+        <input class="form-control col-sm-10"'
+         id="delta_rec_total" type="text"
+         name="delta_rec_total" value="{{ object.delta_rec_total }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="id_vantive">id_vantive: </label>
+      <input class="form-control col-sm-10"' id="id_vantive" type="text" name="id_vantive"
+            value="{{ object.id_vantive }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="esteira">esteira: </label>
+        <input class="form-control col-sm-10"'
+         id="esteira" type="text"
+         name="esteira" value="{{ object.esteira }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="classificacao_resumo">classificacao_resumo: </label>
+      <input class="form-control col-sm-10"' id="classificacao_resumo" type="text" name="classificacao_resumo"
+            value="{{ object.classificacao_resumo }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="pedido">pedido: </label>
+        <input class="form-control col-sm-10"'
+         id="pedido" type="text"
+         name="pedido" value="{{ object.pedido }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="carteira">carteira: </label>
+      <input class="form-control col-sm-10"' id="carteira" type="text" name="carteira" value="{{ object.carteira }}">
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="escalonado">escalonado: </label>
+        <input class="form-control col-sm-10"'
+         id="escalonado" type="text"
+         name="escalonado" value="{{ object.escalonado }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="rede_status">rede_status: </label>
+      <input class="form-control col-sm-10"' id="rede_status" type="text" name="rede_status"
+            value="{{ object.rede_status }}">
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

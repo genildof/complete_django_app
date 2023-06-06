@@ -1,0 +1,11 @@
+{% extends "pedidos/pedido_base.html" %}
+
+{% block pedido_content %}
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ object }}"?</p>
+  <div>
+    <input class="btn btn-danger" value="Delete Pedido" type="submit">
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "pedidos/pedido_base.html" %}
+
+{% block pedido_content %}
+
+<p>
+    <a class="btn btn-light" href="{% url 'apps_Pedido_list' %}">
+        Voltar
+    </a>
+</p>
+
+<div class="m-2">
+    <h4>Pedido {{ object.pedido }}</h4>
+</div>
+
+<table class="table">
+    <tr>
+        <td>nova_quebra</td>
+        <td>{{ object.nova_quebra }}</td>
+    </tr>
+    <tr>
+        <td>rede_contratada</td>
+        <td>{{ object.rede_contratada }}</td>
+    </tr>
+    <tr>
+        <td>data_entrada</td>
+        <td>{{ object.data_entrada }}</td>
+    </tr>
+    <tr>
+        <td>servico</td>
+        <td>{{ object.servico }}</td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>{{ object.updated_at }}</td>
+    </tr>
+    <tr>
+        <td>rede_data_contratada</td>
+        <td>{{ object.rede_data_contratada }}</td>
+    </tr>
+    <tr>
+        <td>cliente</td>
+        <td>{{ object.cliente }}</td>
+    </tr>
+    <tr>
+        <td>num_wcd</td>
+        <td>{{ object.num_wcd }}</td>
+    </tr>
+    <tr>
+        <td>data_planejada</td>
+        <td>{{ object.data_planejada }}</td>
+    </tr>
+    <tr>
+        <td>cadeia_pendencias_descricao</td>
+        <td>{{ object.cadeia_pendencias_descricao }}</td>
+    </tr>
+    <tr>
+        <td>segmento</td>
+        <td>{{ object.segmento }}</td>
+    </tr>
+    <tr>
+        <td>sla</td>
+        <td>{{ object.sla }}</td>
+    </tr>
+    <tr>
+        <td>num_atp</td>
+        <td>{{ object.num_atp }}</td>
+    </tr>
+    <tr>
+        <td>data_tecnica</td>
+        <td>{{ object.data_tecnica }}</td>
+    </tr>
+    <tr>
+        <td>rede_status_sco</td>
+        <td>{{ object.rede_status_sco }}</td>
+    </tr>
+    <tr>
+        <td>velocidade</td>
+        <td>{{ object.velocidade }}</td>
+    </tr>
+    <tr>
+        <td>status_update</td>
+        <td>{{ object.status_update }}</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>{{ object.created_at }}</td>
+    </tr>
+    <tr>
+        <td>rede_id_sco</td>
+        <td>{{ object.rede_id_sco }}</td>
+    </tr>
+    <tr>
+        <td>cidade</td>
+        <td>{{ object.cidade }}</td>
+    </tr>
+    <tr>
+        <td>delta_rec_total</td>
+        <td>{{ object.delta_rec_total }}</td>
+    </tr>
+    <tr>
+        <td>id_vantive</td>
+        <td>{{ object.id_vantive }}</td>
+    </tr>
+    <tr>
+        <td>esteira</td>
+        <td>{{ object.esteira }}</td>
+    </tr>
+    <tr>
+        <td>classificacao_resumo</td>
+        <td>{{ object.classificacao_resumo }}</td>
+    </tr>
+    <tr>
+        <td>pedido</td>
+        <td>{{ object.pedido }}</td>
+    </tr>
+    <tr>
+        <td>carteira</td>
+        <td>{{ object.carteira }}</td>
+    </tr>
+    <tr>
+        <td>escalonado</td>
+        <td>{{ object.escalonado }}</td>
+    </tr>
+    <tr>
+        <td>rede_status</td>
+        <td>{{ object.rede_status }}</td>
+    </tr>
+</table>
+<p>
+    <a class="btn btn-primary" href="{{object.get_update_url}}">Editar</a>
+</p>
+{% endblock %}

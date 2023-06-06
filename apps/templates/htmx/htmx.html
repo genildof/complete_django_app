@@ -1,0 +1,26 @@
+{% extends "pedidos/pedido_base.html" %}
+{% block extrahead %}
+<script src="https://unpkg.com/htmx.org@1.8.4"></script>
+<script>
+  htmx.config.useTemplateFragments = true;
+</script>
+{% endblock %}
+{% block pedido_content %}
+<div id="content" class="container">
+  <div class="m-2">
+    <h4>Voltar: <a href="{% url 'apps_Pedido_index' %}">Pedidos</a></h4>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-6">
+        <h5>Add A Pedido</h5>
+        <div hx-get="{% url 'apps_Pedido_htmx_create' %}" hx-trigger="load" hx-swap="outerHTML"></div>
+        <h4>Pedido List</h4>
+        <div hx-get="{% url 'apps_Pedido_htmx_list' %}" hx-trigger="load">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
